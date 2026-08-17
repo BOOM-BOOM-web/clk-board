@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CLKboard — Hover to Earn</title>
+<meta name="description" content="A clicker game where you hover a virtual keyboard to earn CLKs.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect x='2' y='5' width='20' height='14' rx='2' fill='%23ff2d8a'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="bg-glow" aria-hidden="true"></div>
+
+<header class="topbar">
+  <div class="brand">
+    <svg class="brand-svg" viewBox="0 0 24 24" aria-hidden="true">
+      <rect x="2" y="5" width="20" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/>
+      <rect x="5" y="8.5" width="2" height="2" fill="currentColor"/>
+      <rect x="8.5" y="8.5" width="2" height="2" fill="currentColor"/>
+      <rect x="12" y="8.5" width="2" height="2" fill="currentColor"/>
+      <rect x="15.5" y="8.5" width="2" height="2" fill="currentColor"/>
+      <rect x="5" y="13" width="14" height="2" fill="currentColor" rx="0.5"/>
+    </svg>
+    <span class="brand-name">CLK<span class="brand-accent">board</span></span>
+  </div>
+  
+  <div class="stats" role="status" aria-live="polite">
+    <div class="stat">
+      <span class="stat-label">CLKs</span>
+      <span class="stat-value" id="clkCount">0</span>
+    </div>
+    <div class="stat">
+      <span class="stat-label">Per Hover</span>
+      <span class="stat-value" id="perHover">1</span>
+    </div>
+    <div class="stat">
+      <span class="stat-label">Combo</span>
+      <span class="stat-value" id="comboValue">×1.0</span>
+    </div>
+    <div class="stat">
+      <span class="stat-label">Auto</span>
+      <span class="stat-value" id="autoRate">0/s</span>
+    </div>
+  </div>
+  
+  <a href="shop.html" class="shop-btn" aria-label="Visit the upgrade shop">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M5 7h14l-1.5 9a2 2 0 0 1-2 1.7H8.5a2 2 0 0 1-2-1.7L5 7z"/>
+      <path d="M9 7V5a3 3 0 0 1 6 0v2"/>
+    </svg>
+    <span>Shop</span>
+  </a>
+</header>
+
+<main class="keyboard-stage">
+  <div class="keyboard" id="keyboard" role="group" aria-label="Keyboard"></div>
+</main>
+
+<footer class="game-footer">
+  <p><strong>Hover</strong> the keys to earn CLKs. <strong>Move between keys</strong> to build combo. Visit the <strong>Shop</strong> to spend your stash.</p>
+</footer>
+
+<div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+<script src="core.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
